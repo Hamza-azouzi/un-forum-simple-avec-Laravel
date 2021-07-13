@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+@mixin flex($jc, $ai, $dr: row) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-direction: $dr;
+}
+body {
+    background-image: url("../src/assets/bg.png");
+}
+
+// <!-- nav bar -->
+
+.navbar1 {
+    @include flex(space-between, center);
+
+    margin: 20px 30px;
+
+    .logo {
+        display: flex;
+
+        .logo1 {
+            width: 70px;
+        }
+        .logo2 {
+            width: 250px;
+        }
+    }
+    .menu1 {
+        @include flex(center, center);
+
+        .menu2 {
+            @include flex(center, center);
+
+            list-style: none;
+            column-gap: 40px;
+            background: white;
+            padding: 30px 30px;
+            height: 50px;
+            border-radius: 50px;
+            font-weight: 600;
+            
+        }
+    }
+
+    .icons-nav {
+        display: flex;
+
+        column-gap: 20px;
+
+        .icon-noti {
+            position: relative;
+            @include flex(center, center);
+
+            background: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            // padding: 10px;
+
+            #noti {
+                position: absolute;
+
+                background: orange;
+                height: 20px;
+                width: 20px;
+                border-radius: 20px;
+                padding: 1px 5px;
+                top: 0px;
+                right: -10px;
+
+                font-weight: bolder;
+            }
+        }
+    }
+
+  
+}
+  // <!-- nav bar -->
+
+
+
+// <!-- container -->
+
+.container {
+    @include flex(space-around, center, row);
+column-gap: 70px;
+    .content1 {
+        @include flex(space-between, center, column);
+    }
+
+    .content2 {
+        @include flex(center, center, column);
+
+        .cont1 {
+            width: 600px;
+            height: auto;
+        }
+        .cont2 {
+            button {
+                background: red;
+                @include flex(center, center);
+                border-radius: 30px;
+                width: 250px;
+                height: 50px;
+            }
+        }
+    }
+
+    .content3 {
+        @include flex(space-between, center, row);
+    }
+}
+
+// <!-- container -->
